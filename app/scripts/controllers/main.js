@@ -12,6 +12,7 @@ angular.module('yapApp')
     $scope.awesomeThings = [
       'HTML5 Boilerplate',
       'AngularJS',
-      'Karma'
+      'Karma',
+      'Other Stuff'
     ];
   });
