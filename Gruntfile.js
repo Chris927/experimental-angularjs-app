@@ -452,7 +452,10 @@ module.exports = function (grunt) {
         },
         src: [
           'index.hml',
+          'favicon.ico',
           'fonts/*',
+          'views/*',
+          'styles/*.css',
           'scripts/*.js',
           'images/*'
         ],
