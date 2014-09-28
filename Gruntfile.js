@@ -424,6 +424,12 @@ module.exports = function (grunt) {
         branch: 'master',
         tag: pkg.version
       },
+      pages: {
+        options: {
+          remote: 'git@github.com:Chris927/experimental-angularjs-app.git',
+          branch: 'gh-pages'
+        }
+      },
       local: {
         options: {
           remote: '../',
