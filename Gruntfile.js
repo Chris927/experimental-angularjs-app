@@ -436,10 +436,32 @@ module.exports = function (grunt) {
           branch: 'build'
         }
       }
+    },
+    manifest: {
+      generate: {
+        options: {
+          basePath: './dist',
+          cache: [],
+          network: [],
+          preferOnline: true,
+          verbose: true,
+          timestamp: false,
+          hash: true,
+          master: [ 'index.html' ]
+        },
+        src: [
+          'index.hml',
+          'fonts/*',
+          'scripts/*.js',
+          'images/*'
+        ],
+        dest: 'dist/chris1.appcache'
+      }
     }
   });
 
   grunt.loadNpmTasks('grunt-build-control');
+  grunt.loadNpmTasks('grunt-manifest');
 
   grunt.registerTask('serve', 'Compile then start a connect web server', function (target) {
     if (target === 'dist') {
@@ -485,7 +507,8 @@ module.exports = function (grunt) {
     'uglify',
     'filerev',
     'usemin',
-    'htmlmin'
+    'htmlmin',
+    'manifest'
   ]);
 
   grunt.registerTask('default', [
