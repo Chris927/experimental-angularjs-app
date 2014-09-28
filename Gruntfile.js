@@ -417,7 +417,8 @@ module.exports = function (grunt) {
         dir: 'dist',
         commit: true,
         push: true,
-        message: 'Built %sourceName% from commit %sourceCommit% on branch %sourceBranch%'
+        message: 'Built %sourceName% from commit %sourceCommit% on branch %sourceBranch%',
+        debug: true
       },
       heroku: {
         remote: 'git@heroku.com:safe-brushlands-9413.git',
@@ -460,8 +461,8 @@ module.exports = function (grunt) {
     }
   });
 
-  grunt.loadNpmTasks('grunt-build-control');
-  grunt.loadNpmTasks('grunt-manifest');
+  //grunt.loadNpmTasks('grunt-build-control');
+  //grunt.loadNpmTasks('grunt-manifest');
 
   grunt.registerTask('serve', 'Compile then start a connect web server', function (target) {
     if (target === 'dist') {
