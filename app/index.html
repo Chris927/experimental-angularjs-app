@@ -40,7 +40,10 @@
     <!-- Add your site or application content here -->
     <div class="container">
 
-      <div ng-controller="TestCtrl">{{ test }}</div>
+      <div ng-controller="CookieCheckCtrl" ng-show="!areCookiesEnabled">
+        Oops, cookies are not enabled. Cookies are required for this
+        application. Please check and adjust your settings.
+      </div>
 
       <div ng-view=""></div>
 
@@ -86,6 +89,7 @@
         <script src="scripts/controllers/stuffs.js"></script>
         <script src="scripts/controllers/test.js"></script>
         <script src="scripts/controllers/stuffs2.js"></script>
+        <script src="scripts/controllers/cookie_check.js"></script>
         <!-- endbuild -->
 </body>
 </html>

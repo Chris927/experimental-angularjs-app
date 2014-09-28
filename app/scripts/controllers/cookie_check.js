@@ -11,7 +11,7 @@ angular.module('yapApp')
   .controller('CookieCheckCtrl', function ($scope) {
     $scope.areCookiesEnabled = false;
     document.cookie = '__testCookies=x';
-    var oldLength = document.cookies.length;
+    var oldLength = document.cookie.length;
     console.log('oldLength', oldLength);
     document.cookie = '__testCookies=xx';
     var newLength = document.cookie.length;
