@@ -2,7 +2,7 @@
 <html class="no-js" manifest="chris1.appcache">
   <head>
     <meta charset="utf-8">
-    <title>Yap - Testing App Chris</title>
+    <title>Testing App Chris</title>
     <meta name="description" content="just testing, by chris">
     <meta name="viewport" content="width=device-width">
     <!-- Place favicon.ico and apple-touch-icon.png in the root directory -->
@@ -20,7 +20,7 @@
       <p class="browsehappy">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> to improve your experience.</p>
     <![endif]-->
 
-    <div role="navigation" class="navbar navbar-inverse navbar-fixed-top">
+    <div role="navigation" class="navbar navbar-inverse navbar-fixed-top" ng-controller="NavigationCtrl">
       <div class="container-fluid">
         <div class="navbar-header">
           <button type="button" data-toggle="collapse" data-target="#navbar-collapse-1" class="navbar-toggle collapsed">
@@ -30,8 +30,8 @@
         </div>
         <div id="navbar-collapse-1" class="collapse navbar-collapse">
           <ul class="nav navbar-nav">
-            <li class="active"><a href="#">Active</a></li>
-            <li><a href="#/stuffs">Other</a></li>
+            <li ng-class="{ active: isActive('/') }"><a href="#/">Active</a></li>
+            <li ng-class="{ active: isActive('/stuffs') }"><a href="#/stuffs">Stuffs</a></li>
           </ul>
         </div>
       </div>
@@ -90,6 +90,7 @@
         <script src="scripts/controllers/test.js"></script>
         <script src="scripts/controllers/stuffs2.js"></script>
         <script src="scripts/controllers/cookie_check.js"></script>
+        <script src="scripts/controllers/navigation.js"></script>
         <!-- endbuild -->
 </body>
 </html>
