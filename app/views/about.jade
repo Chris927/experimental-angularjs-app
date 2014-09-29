@@ -1,0 +1,30 @@
+form.navbar-form.navbar-left
+  .btn-group.btn-group-justified
+    .btn-group
+      button.btn.btn-default(type='submit')
+        span.glyphicon.glyphicon-chevron-left
+        |  Back
+    .btn-group
+      button.btn.btn-primary(type='submit')
+        | Confirm and login 
+        span.glyphicon.glyphicon-chevron-right
+.well
+  p You <em>must</em> confirm your slot by making a payment within 1 hour.
+  p You can cancel your slot up until 6 hours before the start of the slot.
+form(role='form')
+  .checkbox
+    label
+      input(type='checkbox')
+      | Don't show this again.
+  .form-group
+    input.form-control(type='text', name='email', placeholder='Your email')
+  .form-group
+    input.form-control(type='password', name='password', placeholder='Choose a password')
+  .form-group
+    input.form-control(type='password', name='password2', placeholder='Confirm password')
+  .form-group
+    .btn-group.btn-group-justified
+      .btn-group
+        button.btn.btn-primary(type='submit')
+          |  Confirm and login 
+          span.glyphicon.glyphicon-chevron-right
