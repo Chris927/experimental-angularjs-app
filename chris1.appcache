@@ -8,14 +8,12 @@ fonts/glyphicons-halflings-regular.svg
 fonts/glyphicons-halflings-regular.ttf
 fonts/glyphicons-halflings-regular.woff
 views/about.html
-views/main.html
-views/stuffs.html
-views/stuffs2.html
+views/home.html
 styles/main.d3984ff1.css
 styles/vendor.20833e0b.css
 scripts/oldieshim.a466b7b1.js
-scripts/scripts.8cf056b6.js
-scripts/vendor.84cae927.js
+scripts/scripts.42cd91d5.js
+scripts/vendor.ef23375c.js
 images/yeoman.d2754b85.png
 
 NETWORK:
