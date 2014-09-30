@@ -18,7 +18,7 @@ angular.module('yapApp')
         return errors;
       },
       clear: function() {
-        errors = [];
+        errors.length = 0;
       }
     };
   });

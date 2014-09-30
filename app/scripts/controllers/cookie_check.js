@@ -12,10 +12,8 @@ angular.module('yapApp')
     $scope.areCookiesEnabled = false;
     document.cookie = '__testCookies=x';
     var oldLength = document.cookie.length;
-    console.log('oldLength', oldLength);
     document.cookie = '__testCookies=xx';
     var newLength = document.cookie.length;
-    console.log('newLength', newLength);
     if (newLength === oldLength + 1) {
       $scope.areCookiesEnabled = true;
     }

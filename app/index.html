@@ -47,6 +47,15 @@
       </div>
 
       <div ng-controller="ErrorFeedbackCtrl">
+        <div role="alert" class="alert alert-danger" ng-cloak ng-show="hasErrors">
+          <button type="button" class="close" ng-click="dismiss()">
+            <span aria-hidden="true">&times;</span>
+            <span class="sr-only">Close</span>
+          </button>
+          Oops, an error occurred. Please
+          <a ui-sref="report-error">let us know</a>
+          about it.
+        </div>
         <ul>
           <li ng-repeat="e in errors">
             {{ e.message }}

@@ -9,6 +9,11 @@
  */
 angular.module('yapApp')
   .controller('ErrorFeedbackCtrl', function ($scope, ErrorsService) {
-    // $scope.errors = [ { message: 'first error' }, { message: 'next error' } ];
     $scope.errors = ErrorsService.errors();
+    $scope.$watch('errors.length', function(newValue) {
+      $scope.hasErrors = newValue && newValue > 0;
+    });
+    $scope.dismiss = function() {
+      ErrorsService.clear();
+    };
   });
