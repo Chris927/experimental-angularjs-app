@@ -32,6 +32,7 @@
           <ul class="nav navbar-nav">
             <li ng-class="{ active: isActive('/') }"><a href="#/">Home</a></li>
             <li ng-class="{ active: isActive('/about') }"><a href="#/about">About</a></li>
+            <li ng-class="{ active: isActive('/feedback') }"><a href="#/feedback">Feedback</a></li>
           </ul>
         </div>
       </div>
@@ -40,9 +41,17 @@
     <!-- Add your site or application content here -->
     <div class="container">
 
-      <div ng-controller="CookieCheckCtrl" ng-show="!areCookiesEnabled">
+      <div ng-controller="CookieCheckCtrl" ng-cloak ng-show="!areCookiesEnabled">
         Oops, cookies are not enabled. Cookies are required for this
         application. Please check and adjust your settings.
+      </div>
+
+      <div ng-controller="ErrorFeedbackCtrl">
+        <ul>
+          <li ng-repeat="e in errors">
+            {{ e.message }}
+          </li>
+        </ul>
       </div>
 
       <div ui-view></div>
@@ -87,6 +96,9 @@
         <script src="scripts/controllers/about.js"></script>
         <script src="scripts/controllers/cookie_check.js"></script>
         <script src="scripts/controllers/navigation.js"></script>
+        <script src="scripts/controllers/error_feedback.js"></script>
+        <script src="scripts/controllers/feedback.js"></script>
+        <script src="scripts/services/errors.js"></script>
         <!-- endbuild -->
 </body>
 </html>

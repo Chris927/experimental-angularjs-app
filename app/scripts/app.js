@@ -24,6 +24,10 @@ angular
         url: '/',
         templateUrl: 'views/home.html'
       })
+      .state('feedback', {
+        url: '/feedback',
+        templateUrl: 'views/feedback.html'
+      })
       .state('about', {
         url: '/about',
         templateUrl: 'views/about.html'
