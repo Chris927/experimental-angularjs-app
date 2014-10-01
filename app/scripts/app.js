@@ -28,6 +28,11 @@ angular
         url: '/feedback',
         templateUrl: 'views/feedback.html'
       })
+      .state('reportError', {
+        url: '/error',
+        templateUrl: 'views/report_error.html',
+        controller: 'ReportErrorCtrl'
+      })
       .state('about', {
         url: '/about',
         templateUrl: 'views/about.html'

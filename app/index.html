@@ -46,21 +46,16 @@
         application. Please check and adjust your settings.
       </div>
 
-      <div ng-controller="ErrorFeedbackCtrl">
+      <div ng-controller="ErrorFeedbackCtrl" ng-show="showAlert()">
         <div role="alert" class="alert alert-danger" ng-cloak ng-show="hasErrors">
           <button type="button" class="close" ng-click="dismiss()">
             <span aria-hidden="true">&times;</span>
             <span class="sr-only">Close</span>
           </button>
           Oops, an error occurred. Please
-          <a ui-sref="report-error">let us know</a>
+          <a ui-sref="reportError">let us know</a>
           about it.
         </div>
-        <ul>
-          <li ng-repeat="e in errors">
-            {{ e.message }}
-          </li>
-        </ul>
       </div>
 
       <div ui-view></div>
@@ -107,6 +102,7 @@
         <script src="scripts/controllers/navigation.js"></script>
         <script src="scripts/controllers/error_feedback.js"></script>
         <script src="scripts/controllers/feedback.js"></script>
+        <script src="scripts/controllers/report_error.js"></script>
         <script src="scripts/services/errors.js"></script>
         <!-- endbuild -->
 </body>
