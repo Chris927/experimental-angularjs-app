@@ -39,6 +39,11 @@ angular
         url: '/feedback',
         templateUrl: 'views/feedback.html'
       })
+      .state('profile', {
+        url: '/profile',
+        templateUrl: 'views/profile.html',
+        controller: 'ProfileCtrl'
+      })
       .state('reportError', {
         url: '/error',
         templateUrl: 'views/report_error.html',

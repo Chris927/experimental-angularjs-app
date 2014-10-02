@@ -1,0 +1,25 @@
+.navbar-form.navbar-left
+  .btn-group.btn-group-justified
+    .btn-group
+      button.btn.btn-default(type='submit', ui-sref='home')
+        span.glyphicon.glyphicon-chevron-left
+        |  Back
+    .btn-group
+      button.btn.btn-primary(type='submit')
+        | Update 
+        span.glyphicon.glyphicon-ok
+
+h3 My Profile
+.row
+  .col-md-8.col-xs-12
+    form(role='form')
+      .form-group
+        input.form-control(type='text', name='name', placeholder='My name')
+      .form-group
+        input.form-control(type='email', name='email', placeholder='My email')
+      .form-group
+        .btn-group.btn-group-justified
+          .btn-group
+            button.btn.btn-primary(type='submit')
+              | Update 
+              span.glyphicon.glyphicon-ok
