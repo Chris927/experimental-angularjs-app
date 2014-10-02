@@ -1,5 +1,16 @@
 'use strict';
 
+/* This may fix the navbar to hide once a menu item has been clicked.
+   Thanks, @Hardcoredevs on https://github.com/twbs/bootstrap/issues/12852
+*/
+$(".navbar-nav li a").click(function (event) {
+  // check if window is small enough so dropdown is created
+  var toggle = $(".navbar-toggle").is(":visible");
+  if (toggle) {
+    $(".navbar-collapse").collapse('hide');
+  }
+});
+
 /**
  * @ngdoc overview
  * @name yapApp
