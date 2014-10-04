@@ -39,6 +39,11 @@ angular
         url: '/feedback',
         templateUrl: 'views/feedback.html'
       })
+      .state('items', {
+        url: '/items',
+        templateUrl: 'views/items.html',
+        controller: 'ItemsCtrl'
+      })
       .state('profile', {
         url: '/profile',
         templateUrl: 'views/profile.html',

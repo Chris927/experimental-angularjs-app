@@ -5,7 +5,7 @@
         span.glyphicon.glyphicon-chevron-left
         |  Back
     .btn-group
-      button.btn.btn-primary(type='submit')
+      button.btn.btn-primary(type='submit', ng-click='update()')
         | Update 
         span.glyphicon.glyphicon-ok
 
@@ -14,12 +14,12 @@ h3 My Profile
   .col-md-8.col-xs-12
     form(role='form')
       .form-group
-        input.form-control(type='text', name='name', placeholder='My name')
+        input.form-control(type='text', name='name', ng-model="data.name", placeholder='My name')
       .form-group
         input.form-control(type='email', name='email', placeholder='My email')
       .form-group
         .btn-group.btn-group-justified
           .btn-group
-            button.btn.btn-primary(type='submit')
+            button.btn.btn-primary(ng-click='update()')
               | Update 
               span.glyphicon.glyphicon-ok
