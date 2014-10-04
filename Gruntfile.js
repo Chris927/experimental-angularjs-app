@@ -314,6 +314,29 @@ module.exports = function (grunt) {
       }
     },
 
+    replace: {
+      dist: {
+        options: {
+          patterns: [
+            { match: 'version', replacement: 13 }
+          ]
+        },
+        files: [
+          { expand: true, flatten: true, src: [ 'app/config.js' ], dest: 'dist/' }
+        ]
+      },
+      serve: {
+        options: {
+          patterns: [
+            { match: 'version', replacement: 13 }
+          ]
+        },
+        files: [
+          { expand: true, flatten: true, src: [ 'app/config.js' ], dest: '.tmp/' }
+        ]
+      }
+    },
+
     // ng-annotate tries to make the code safe for minification automatically
     // by using the Angular long form for dependency injection.
     ngAnnotate: {
@@ -478,6 +501,7 @@ module.exports = function (grunt) {
       'wiredep',
       'concurrent:server',
       'autoprefixer',
+      'replace',
       'connect:livereload',
       'watch'
     ]);
@@ -504,6 +528,7 @@ module.exports = function (grunt) {
     'concurrent:dist',
     'autoprefixer',
     'concat',
+    'replace',
     'ngAnnotate',
     'copy:dist',
     'cdnify',

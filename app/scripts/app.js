@@ -37,7 +37,13 @@ angular
       })
       .state('feedback', {
         url: '/feedback',
-        templateUrl: 'views/feedback.html'
+        templateUrl: 'views/feedback.html',
+        controller: 'FeedbackCtrl',
+        resolve: {
+          config: function() {
+            return window.Config;
+          }
+        }
       })
       .state('items', {
         url: '/items',
