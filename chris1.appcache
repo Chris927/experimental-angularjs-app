@@ -10,11 +10,13 @@ fonts/glyphicons-halflings-regular.woff
 views/about.html
 views/feedback.html
 views/home.html
+views/items.html
+views/profile.html
 views/report_error.html
 styles/main.d3984ff1.css
 styles/vendor.20833e0b.css
 scripts/oldieshim.a466b7b1.js
-scripts/scripts.d4c80dba.js
+scripts/scripts.56630b5f.js
 scripts/vendor.ef23375c.js
 images/yeoman.d2754b85.png
 
