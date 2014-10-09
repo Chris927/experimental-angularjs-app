@@ -9,9 +9,12 @@
         | Save 
         span.glyphicon.glyphicon-ok
 
-h3 My Profile
 .row
-  .col-md-8.col-xs-12
+  .col-xs-12
+    h3 My Profile
+
+.row
+  .col-xs-12
     form(role='form', name='editProfileForm', novalidate)
       p {{ editProfileForm.email.$valid }}
       .form-group
