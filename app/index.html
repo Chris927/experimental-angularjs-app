@@ -42,6 +42,15 @@
     <!-- Add your site or application content here -->
     <div class="container">
 
+      <oauth
+      site="http://localhost:8080/openid-connect-server-webapp"
+      authorize-path="/authorize"
+      client-id="node-passport-local"
+      redirect-uri="http://localhost:9000"
+      profile-uri="http://localhost:8080/openid-connect-server-webapp/userinfo"
+      scope="email openid is_casual_canvasser">
+      </oauth>
+
       <div ng-controller="CookieCheckCtrl" ng-cloak ng-show="!areCookiesEnabled">
         Oops, cookies are not enabled. Cookies are required for this
         application. Please check and adjust your settings.
@@ -93,6 +102,8 @@
     <script src="bower_components/angular-animate/angular-animate.js"></script>
     <script src="bower_components/angular-touch/angular-touch.js"></script>
     <script src="bower_components/angular-ui-router/release/angular-ui-router.js"></script>
+    <script src="bower_components/ngstorage/ngStorage.js"></script>
+    <script src="bower_components/oauth-ng/dist/oauth-ng.js"></script>
     <!-- endbower -->
     <!-- endbuild -->
 

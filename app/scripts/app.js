@@ -21,6 +21,7 @@ $(".navbar-nav li a").click(function (event) {
  */
 angular
   .module('yapApp', [
+    'oauth',
     'ngAnimate',
     'ngCookies',
     'ngResource',
@@ -34,6 +35,16 @@ angular
       .state('home', {
         url: '/',
         templateUrl: 'views/home.html'
+      })
+      .state('access_token', {
+        template: '',
+        url: '/access_token=:token',
+        controller: function($location, $state, AccessToken) {
+          var hash = $location.path().substr(1);
+          console.log('hash', hash);
+          AccessToken.setTokenFromString(hash);
+          $state.go('home');
+        }
       })
       .state('feedback', {
         url: '/feedback',
