@@ -3,23 +3,26 @@
     .btn-group
       button.btn.btn-default(type='submit', ui-sref='home')
         span.glyphicon.glyphicon-chevron-left
-        |  Back
+        |  Cancel
     .btn-group
       button.btn.btn-primary(type='submit', ng-click='update()')
-        | Update 
+        | Save 
         span.glyphicon.glyphicon-ok
 
 h3 My Profile
 .row
   .col-md-8.col-xs-12
-    form(role='form')
+    form(role='form', name='editProfileForm', novalidate)
+      p {{ editProfileForm.email.$valid }}
       .form-group
-        input.form-control(type='text', name='name', ng-model="data.name", placeholder='My name')
-      .form-group
-        input.form-control(type='email', name='email', placeholder='My email')
+        label(for='name') Name
+        input.form-control(type='text', id='name', required, ng-model="data.name", placeholder='My name')
+      .form-group(ng-class="{ 'has-error': editProfileForm.email.$invalid }")
+        label(for='email') Email
+        input.form-control(type='email', id='email', name='email', required, ng-model="data.email", placeholder='My email')
       .form-group
         .btn-group.btn-group-justified
           .btn-group
-            button.btn.btn-primary(ng-click='update()')
-              | Update 
+            button.btn.btn-primary(ng-click='update()', ng-disabled='editProfileForm.$pristine || editProfileForm.$invalid')
+              | Save 
               span.glyphicon.glyphicon-ok
