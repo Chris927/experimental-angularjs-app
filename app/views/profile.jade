@@ -29,3 +29,26 @@
             button.btn.btn-primary(ng-click='update()', ng-disabled='editProfileForm.$pristine || editProfileForm.$invalid')
               | Save 
               span.glyphicon.glyphicon-ok
+
+.row
+  .col-xs-12
+    h3 Another Form
+
+.row(ng-controller='SomeFormCtrl')
+  .col-xs-12
+    p stuffyForm={{ stuffy }}
+    p someStuff={{ stuff }}
+  .col-xs-12
+    form(name='stuffForm')
+      p valid={{ stuffForm.$valid }}
+      div(sf-schema='stuff', sf-form='stuffy', sf-model='model')
+      .form-group
+        .btn-group.btn-group-justified
+          .btn-group
+            button.btn.btn-default(type='submit', ui-sref='home')
+              span.glyphicon.glyphicon-chevron-left
+              |  Cancel
+          .btn-group
+            button.btn.btn-primary(ng-click='update(stuffForm)', ng-disabled='stuffForm.$pristine || stuffForm.$invalid')
+              | Save 
+              span.glyphicon.glyphicon-ok
