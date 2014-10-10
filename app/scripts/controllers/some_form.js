@@ -24,8 +24,8 @@ angular.module('yapApp')
       required: [ 'name', 'title', 'email' ]
     };
     $scope.stuffy = [
-      'name',
       'title',
+      'name',
       'email'
     ];
     $scope.update = function(form) {

@@ -1,0 +1,5 @@
+<ul class="nav navbar-nav navbar-right">
+  <li ng-show="show == 'logged-out'"><a href="#" ng-click='login()'>{{ text }}</a></li>
+  <li ng-show="show == 'logged-in'"><a href="#" ng-click='logout()'>Logout {{ profile.email }}</a></li>
+  <li ng-show="show == 'denied'"><a href="#" ng-click='login()'>Access denied, try again</a></li>
+</ul>

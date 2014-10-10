@@ -35,21 +35,21 @@
             <li ng-class="{ active: isActive('/about') }"><a href="#/about">About</a></li>
             <li ng-class="{ active: isActive('/feedback') }"><a href="#/feedback">Feedback</a></li>
           </ul>
+          <oauth
+          template="views/auth.html"
+          site="http://localhost:8080/my-openid-connect-server"
+          authorize-path="/authorize"
+          client-id="node-passport-local"
+          redirect-uri="http://localhost:9000"
+          profile-uri="http://localhost:8080/my-openid-connect-server/userinfo"
+          scope="email openid is_casual_canvasser">
+          </oauth>
         </div>
       </div>
     </div>
 
     <!-- Add your site or application content here -->
     <div class="container">
-
-      <oauth
-      site="http://localhost:8080/openid-connect-server-webapp"
-      authorize-path="/authorize"
-      client-id="node-passport-local"
-      redirect-uri="http://localhost:9000"
-      profile-uri="http://localhost:8080/openid-connect-server-webapp/userinfo"
-      scope="email openid is_casual_canvasser">
-      </oauth>
 
       <div ng-controller="CookieCheckCtrl" ng-cloak ng-show="!areCookiesEnabled">
         Oops, cookies are not enabled. Cookies are required for this

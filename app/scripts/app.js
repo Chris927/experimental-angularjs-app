@@ -40,11 +40,14 @@ angular
       .state('access_token', {
         template: '',
         url: '/access_token=:token',
-        controller: function($location, $state, AccessToken) {
+        controller: function($scope, $rootScope, $location, $state, $timeout, AccessToken) {
           var hash = $location.path().substr(1);
           console.log('hash', hash);
           AccessToken.setTokenFromString(hash);
-          $state.go('home');
+          $timeout(function() {
+            $rootScope.$broadcast('$routeChangeSuccess');
+            $state.go('home');
+          }, 10);
         }
       })
       .state('feedback', {
