@@ -36,11 +36,7 @@
 
 .row(ng-controller='SomeFormCtrl')
   .col-xs-12
-    p stuffyForm={{ stuffy }}
-    p someStuff={{ stuff }}
-  .col-xs-12
     form(name='stuffForm')
-      p valid={{ stuffForm.$valid }}
       div(sf-schema='stuff', sf-form='stuffy', sf-model='model')
       .form-group
         .btn-group.btn-group-justified
