@@ -30,6 +30,14 @@ angular
     'ui.router',
     'schemaForm'
   ])
+  .config(function($provide) {
+    $provide.decorator('$exceptionHandler', function($delegate, ErrorsService) {
+      return function(exception, cause) {
+        ErrorsService.add(exception, cause);
+        $delegate(exception, cause);
+      }
+    });
+  })
   .config(function($stateProvider, $urlRouterProvider) {
     $urlRouterProvider.otherwise('/');
     $stateProvider

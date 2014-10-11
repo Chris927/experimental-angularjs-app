@@ -9,10 +9,11 @@
  */
 angular.module('yapApp')
   .factory('ErrorsService', function() {
+    var lastErrorNumber = 0;
     var errors = [];
     return {
-      add: function(err) {
-        errors.push(err);
+      add: function(err, cause) {
+        errors.push({ error: err, message: err.message, id: ++lastErrorNumber, cause: cause });
       },
       errors: function() {
         return errors;
