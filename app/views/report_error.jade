@@ -1,5 +1,15 @@
 h3 Report an Error
 
-ul
-  li(ng-repeat="e in errors")
-    | {{ e }}
+p Please report the error(s) by sending us an email. Simply click this button:
+
+.row
+  .btn-group.btn-group-justified
+    .btn-group
+      a.btn.btn-primary(ng-href="mailto:chris@uber5.com?subject=Error%20Report&body={{ emailBody }}") Send email
+
+h3 {{ errors.length }} Errors Recorded
+
+.row
+  ul
+    li(ng-repeat="e in errors")
+      | {{ e }}
