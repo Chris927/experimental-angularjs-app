@@ -38,6 +38,24 @@ angular
       }
     });
   })
+  .config(function($httpProvider) {
+    $httpProvider.defaults.useXDomain = true;
+    delete $httpProvider.defaults.headers.common['X-Requested-With'];
+    $httpProvider.interceptors.push(function(AccessToken) {
+      return {
+        request: function(config) {
+          if (config.url.indexOf(window.Config.itemsUrl) != -1) {
+            var token = AccessToken.get();
+            if (token) {
+              config.headers.Authorization = 'Bearer ' + token.access_token;
+            }
+          }
+          console.log('config.headers', config);
+          return config;
+        }
+      }
+    });
+  })
   .config(function($stateProvider, $urlRouterProvider) {
     $urlRouterProvider.otherwise('/');
     $stateProvider

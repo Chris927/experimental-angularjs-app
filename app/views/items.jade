@@ -1,2 +1,4 @@
 h3 My Items (<a ui-sref="profile">{{ profileName }}</a>)
-p (nothing here)
+ul
+  li(ng-repeat="item in items")
+    | {{ item.title }}

@@ -1,3 +1,4 @@
 window.Config = {
-  version: @@version
+  version: @@version,
+  itemsUrl: '@@itemsUrl'
 };

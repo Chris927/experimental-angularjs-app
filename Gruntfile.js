@@ -318,7 +318,8 @@ module.exports = function (grunt) {
       dist: {
         options: {
           patterns: [
-            { match: 'version', replacement: 13 }
+            { match: 'version', replacement: 13 },
+            { match: 'itemsUrl', replacement: 'http://salty-springs-6226.herokuapp.com' }
           ]
         },
         files: [
@@ -328,7 +329,8 @@ module.exports = function (grunt) {
       serve: {
         options: {
           patterns: [
-            { match: 'version', replacement: 13 }
+            { match: 'version', replacement: 13 },
+            { match: 'itemsUrl', replacement: 'http://localhost:3020' }
           ]
         },
         files: [
