@@ -48,3 +48,13 @@
             button.btn.btn-primary(ng-click='update(stuffForm)', ng-disabled='stuffForm.$pristine || stuffForm.$invalid')
               | Save 
               span.glyphicon.glyphicon-ok
+      .form-group
+        .btn-group.btn-group-justified
+          .btn-group
+            button.btn.btn-default(type='submit', ui-sref='home')
+              span.glyphicon.glyphicon-chevron-left
+              |  Cancel
+          .btn-group
+            button.btn.btn-primary(ng-click='update(stuffForm)', ng-disabled='stuffForm.$pristine || stuffForm.$invalid')
+              | Save 
+              span.glyphicon.glyphicon-ok

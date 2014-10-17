@@ -3,7 +3,7 @@
 angular.module('yapApp')
   .factory('ItemsResourceService', function($resource, ProfileService) {
     var itemsEndpoint = window.Config.itemsUrl;
-    return $resource(itemsEndpoint + '/history', {}, {
+    return $resource(itemsEndpoint + '/items', {}, {
       query: {
         method: 'GET',
         isArray: true,
