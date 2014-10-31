@@ -1,1 +1,1 @@
-<h3>Report an Error</h3> <ul> <li ng-repeat="e in errors">{{ e.message }}</li> </ul>
+<h3>Report an Error</h3> <p>Please report the error(s) by sending us an email. Simply click this button:</p> <div class="row"> <div class="btn-group btn-group-justified"> <div class="btn-group"><a ng-href="mailto:chris@uber5.com?subject=Error%20Report&amp;body={{ emailBody }}" class="btn btn-primary">Send email</a></div> </div> </div> <h3>{{ errors.length }} Errors Recorded</h3> <div class="row"> <ul> <li ng-repeat="e in errors">{{ e }}</li> </ul> </div>
