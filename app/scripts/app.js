@@ -91,6 +91,15 @@ angular
         templateUrl: 'views/items.html',
         controller: 'ItemsCtrl'
       })
+      .state('diary', {
+        url: '/diary',
+        templateUrl: 'views/diary.html'
+      })
+      .state('diary.index', {
+        url: '/',
+        templateUrl: 'views/diary-index.html',
+        controller: 'DiaryIndexCtrl'
+      })
       .state('profile', {
         url: '/profile',
         templateUrl: 'views/profile.html',
