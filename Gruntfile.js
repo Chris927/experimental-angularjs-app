@@ -477,6 +477,7 @@ module.exports = function (grunt) {
         },
         src: [
           'index.hml',
+          'config.js',
           'favicon.ico',
           'fonts/*',
           'views/*',
