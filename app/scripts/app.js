@@ -26,8 +26,8 @@ angular
     'ngCookies',
     'ngResource',
     'ngSanitize',
-    'ngTouch',
     'ui.router',
+    'ngTouch',
     'schemaForm'
   ])
   .config(function($provide) {
