@@ -471,7 +471,7 @@ module.exports = function (grunt) {
           network: [],
           preferOnline: true,
           verbose: true,
-          timestamp: false,
+          timestamp: true,
           hash: true,
           master: [ 'index.html' ]
         },
