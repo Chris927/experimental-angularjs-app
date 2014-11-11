@@ -17,4 +17,5 @@ angular.module('yapApp')
       columnFormat: 'ddd, MMM D',
       allDaySlot: false
     });
+    $('#myModal').modal();
   });
