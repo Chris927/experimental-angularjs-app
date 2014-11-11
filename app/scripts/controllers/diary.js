@@ -17,4 +17,16 @@ angular.module('yapApp')
       var e = m.add(120, 'minute');
       calendar.fullCalendar('select', m, e);
     }
+    $scope.increment = function() {
+      $log.log('increment');
+      calendar = $('#diaryCalendar');
+      calendar.fullCalendar('next');
+      calendar.fullCalendar('render');
+    };
+    $scope.decrement = function() {
+      $log.log('decrement');
+      calendar = $('#diaryCalendar');
+      calendar.fullCalendar('prev');
+      calendar.fullCalendar('render');
+    };
   });

@@ -14,9 +14,10 @@ angular.module('yapApp')
     calendar.fullCalendar({
       defaultView: 'agendaDay',
       header: false,
-      height: 'auto',
+      height: $(window).height() - 50,
       columnFormat: 'ddd, MMM D',
       allDaySlot: false,
+      editable: true,
       selectable: true,
       selectHelper: true,
       select: function(start, end) {
