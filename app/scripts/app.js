@@ -93,7 +93,8 @@ angular
       })
       .state('diary', {
         url: '/diary',
-        templateUrl: 'views/diary.html'
+        templateUrl: 'views/diary.html',
+        controller: 'DiaryCtrl'
       })
       .state('diary.index', {
         url: '/',

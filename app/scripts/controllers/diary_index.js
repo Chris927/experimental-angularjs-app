@@ -9,13 +9,29 @@
  */
 angular.module('yapApp')
   .controller('DiaryIndexCtrl', function ($scope, $log) {
+    var calendar = $('#diaryCalendar');
     $log.log('DiaryIndexCtrl');
-    $('#diaryCalendar').fullCalendar({
+    calendar.fullCalendar({
       defaultView: 'agendaDay',
       header: false,
       height: 'auto',
       columnFormat: 'ddd, MMM D',
-      allDaySlot: false
+      allDaySlot: false,
+      selectable: true,
+      selectHelper: true,
+      select: function(start, end) {
+        var title = prompt('product and/or location and/or customer');
+        var eventData;
+        if (title) {
+          eventData = {
+            title: title,
+            start: start,
+            end: end
+          }
+          calendar.fullCalendar('renderEvent', eventData, true);
+        }
+        calendar.fullCalendar('unselect');
+      }
     });
     $('#myModal').modal();
   });
