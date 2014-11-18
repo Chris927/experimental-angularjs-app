@@ -1,13 +1,13 @@
 'use strict';
 
-var addBookableSessionsToCalendar = function(calendar) {
+var addBookableSessionsToCalendar = function(calendar, ProfileService) {
   var events = [];
   var startTime = moment().startOf('day').add(6, 'hours');
   for (var i = 0; i < 7; i++) {
     events.push({
-      title: 'PT 45',
+      title: ProfileService.getSessionTitle(),
       start: moment(startTime),
-      end: moment(startTime).add(45, 'minutes')
+      end: moment(startTime).add(ProfileService.getSessionDuration(), 'minutes')
     });
     startTime.add(15, 'minutes');
   }
@@ -22,7 +22,7 @@ var addBookableSessionsToCalendar = function(calendar) {
  * Controller of the yapApp
  */
 angular.module('yapApp')
-  .controller('DiaryIndexCtrl', function ($scope, $log) {
+  .controller('DiaryIndexCtrl', function ($scope, $log, ProfileService) {
     var calendar = $('#diaryCalendar');
     $log.log('DiaryIndexCtrl');
     calendar.fullCalendar({
@@ -50,6 +50,6 @@ angular.module('yapApp')
         calendar.fullCalendar('unselect');
       }
     });
-    addBookableSessionsToCalendar(calendar);
+    addBookableSessionsToCalendar(calendar, ProfileService);
     $('#myModal').modal();
   });
