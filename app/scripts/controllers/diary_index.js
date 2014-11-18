@@ -1,5 +1,19 @@
 'use strict';
 
+var addBookableSessionsToCalendar = function(calendar) {
+  var events = [];
+  var startTime = moment().startOf('day').add(6, 'hours');
+  for (var i = 0; i < 7; i++) {
+    events.push({
+      title: 'PT 45',
+      start: moment(startTime),
+      end: moment(startTime).add(45, 'minutes')
+    });
+    startTime.add(15, 'minutes');
+  }
+  calendar.fullCalendar('addEventSource', events);
+};
+
 /**
  * @ngdoc function
  * @name yapApp.controller:DiaryIndexCtrl
@@ -20,9 +34,11 @@ angular.module('yapApp')
       editable: true,
       selectable: true,
       selectHelper: true,
-      select: function(start, end) {
+      select: function(eventStart, eventEnd) {
         var title = prompt('product and/or location and/or customer');
         var eventData;
+        var start = calendar.fullCalendar('getCalendar').moment(eventStart);
+        var end = moment(start).add(45, 'minutes');
         if (title) {
           eventData = {
             title: title,
@@ -34,5 +50,6 @@ angular.module('yapApp')
         calendar.fullCalendar('unselect');
       }
     });
+    addBookableSessionsToCalendar(calendar);
     $('#myModal').modal();
   });
